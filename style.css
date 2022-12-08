@@ -1,0 +1,35 @@
+* {
+  box-sizing: border-box;
+}
+.example-1 {
+  width: 100px;
+  height: 100px;
+
+  animation-name: background-change; /*none*/
+  animation-duration: 2s;
+  animation-delay: 2s;
+  animation-fill-mode: both; /*none*/
+  animation-iteration-count: infinite; /*1 infinite(бесконечно)*/
+  animation-direction: alternate; /*normal alternate(плавный переход)*/
+  animation-timing-function: linear;/*ease-in скорость анимации*/
+}
+.example-1:hover {
+  animation-play-state: paused;/*runing (ставит анимацию на паузу)*/
+}
+
+@keyframes background-change {
+  0% {
+    background-color: tomato;
+    border: 0;
+  }
+
+  50% {
+    background-color: greenyellow;
+    border: 50px solid yellow;
+  }
+
+  100% {
+    background-color: aqua;
+    border: 50px solid tomato;
+  }
+}
