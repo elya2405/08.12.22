@@ -44,14 +44,26 @@
     background-color: aqua;
     border: 50px solid magenta;
     border-radius: 100px;
+    margin: 50px 50px;
   }
 }
 
 @keyframes change-size {
   from {
-    transform: scale(1);
+    transform: scale(1) /*rotate(0)*/; /*одновременно крутится и увеличивается*/
+    /*transform: rotate(0);*/
   }
   to {
-    transform: scale(2);
+    transform: scale(2) /*rotate(360)*/;
+    /*transform: rotate(360deg);*/
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360);
   }
 }
