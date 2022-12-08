@@ -5,16 +5,16 @@
   width: 100px;
   height: 100px;
 
-  animation-name: background-change; /*none*/
-  animation-duration: 2s;
-  animation-delay: 2s;
-  animation-fill-mode: both; /*none*/
+  animation-name: background-change, change-size; /*none*/
+  animation-duration: 5s;
+  animation-delay: 5s;
+  animation-fill-mode: both; /*none (стили исчезают), both (стили остаются)*/
   animation-iteration-count: infinite; /*1 infinite(бесконечно)*/
   animation-direction: alternate; /*normal alternate(плавный переход)*/
-  animation-timing-function: linear;/*ease-in скорость анимации*/
+  animation-timing-function: linear; /*ease-in (скорость анимации)*/
 }
 .example-1:hover {
-  animation-play-state: paused;/*runing (ставит анимацию на паузу)*/
+  animation-play-state: paused; /*runing (ставит анимацию на паузу)*/
 }
 
 @keyframes background-change {
@@ -23,13 +23,35 @@
     border: 0;
   }
 
+  25% {
+    background-color: lightgreen;
+    border: 5px dotted black;
+  }
+
   50% {
     background-color: greenyellow;
     border: 50px solid yellow;
+    box-shadow: 0 1px 20px black;
+  }
+
+  75% {
+    background-color: black;
+    border: 2px solid purple;
+    transform: rotate(360deg);
   }
 
   100% {
     background-color: aqua;
-    border: 50px solid tomato;
+    border: 50px solid magenta;
+    border-radius: 100px;
+  }
+}
+
+@keyframes change-size {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(2);
   }
 }
