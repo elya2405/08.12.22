@@ -1,6 +1,7 @@
 * {
   box-sizing: border-box;
 }
+
 .example-1 {
   width: 100px;
   height: 100px;
@@ -66,4 +67,77 @@
   to {
     transform: rotate(360);
   }
+}
+
+.example-2 {
+  margin-top: 50px;
+  margin-left: 50px;
+}
+.example-2 span {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  background-color: yellowgreen;
+  box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.7);
+  margin-right: 15px;
+  border-radius: 50%;
+
+  animation-name: scale;
+  animation-duration: 600ms;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: ease-in-out;
+}
+.example-2 span:nth-child(2) {
+  animation-delay: 200ms;
+}
+.example-2 span:nth-child(3) {
+  animation-delay: 400ms;
+}
+
+@keyframes scale {
+  from {
+    transform: scale(1);
+    box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.7);
+  }
+  to {
+    transform: scale(1.5);
+    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.3);
+  }
+}
+.example-3 {
+  width: 400px;
+  height: 400px;
+  background-color: antiquewhite;
+  border-radius: 50%;
+  position: relative;
+}
+.example-3 .second-hand {
+  background-color: red;
+  height: 4px;
+  width: 200px;
+  position: absolute;
+  top: 205px;
+  left: 0;
+  transform-origin: 100%;
+
+  animation-name: rotate;
+  animation-duration: 60s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+.example-3 .minute-hand {
+  background-color: blue;
+  height: 6px;
+  width: 200px;
+  position: absolute;
+  top: 197px;
+  left: 0;
+  transform-origin: 100%;
+
+  animation-name: rotate;
+  animation-duration: 3600s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
 }
